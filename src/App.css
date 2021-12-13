@@ -5,3 +5,12 @@
 body {
   background-color: white;
 }
+.app_header {
+  flex: 1 1 auto;
+  height: 80px;
+  background: pink;
+  justify-content: center;
+  padding: 12px 4px 4px 16px;
+  box-sizing: border-box;
+  align-items: center;
+}
