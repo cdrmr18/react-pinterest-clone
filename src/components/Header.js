@@ -16,11 +16,11 @@ const Header = () => {
           <PinterestIcon />
         </IconButton>
       </div>
-      <div className="header_button" homePage>
-        <p>homepage</p>
+      <div className="header_button homePage">
+        <a href="/">Home</a>
       </div>
-      <div className="header_button" following>
-        <p>following</p>
+      <div className="header_button following">
+        <p>Following</p>
       </div>
       <div className="header_search">
         <div className="header_searchContainer">
@@ -29,7 +29,7 @@ const Header = () => {
           </IconButton>
           <form>
             <input type="search" />
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
