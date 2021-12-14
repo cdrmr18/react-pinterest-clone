@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
@@ -8,7 +9,18 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { IconButton } from '@mui/material';
 import '../style/Header.css';
 
-const Header = () => {
+const Header = ({ getSearchTerm }) => {
+  let [search, setSearch] = useState('');
+
+  const getTerm = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    getSearchTerm(search);
+  };
+
   return (
     <div className="header_wrapper">
       <div className="header_logo">
@@ -27,8 +39,8 @@ const Header = () => {
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <form>
-            <input type="search" />
+          <form onSubmit={handleSearch}>
+            <input type="search" onChange={getTerm} />
             <button type="submit">Submit</button>
           </form>
         </div>
