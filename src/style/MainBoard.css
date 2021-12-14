@@ -1,0 +1,5 @@
+.MainBoard {
+  display: flex;
+  padding-top: 16px;
+  width: 80%;
+}

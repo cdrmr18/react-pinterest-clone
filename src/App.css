@@ -14,3 +14,9 @@ body {
   box-sizing: border-box;
   align-items: center;
 }
+.app_body {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 100%;
+}
