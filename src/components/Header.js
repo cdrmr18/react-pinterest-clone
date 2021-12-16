@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
@@ -9,16 +8,16 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { IconButton } from '@mui/material';
 import '../style/Header.css';
 
-const Header = ({ getSearchTerm }) => {
-  let [search, setSearch] = useState('');
+const Header = ({ getSearchInput }) => {
+  let [input, setInput] = useState('');
 
-  const getTerm = (e) => {
-    setSearch(e.target.value);
+  const getInput = (e) => {
+    setInput(e.target.value);
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    getSearchTerm(search);
+    getSearchInput(input);
   };
 
   return (
@@ -40,7 +39,7 @@ const Header = ({ getSearchTerm }) => {
             <SearchIcon />
           </IconButton>
           <form onSubmit={handleSearch}>
-            <input type="search" onChange={getTerm} />
+            <input type="search" onChange={getInput} />
             <button type="submit">Submit</button>
           </form>
         </div>

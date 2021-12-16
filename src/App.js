@@ -2,14 +2,14 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import MainBoard from './components/MainBoard';
-require('dotenv').config()
+require('dotenv').config();
 
 function App() {
   const [term, setTerm] = useState('');
 
   // let pins = [];
 
-  const getSearchTerm = (searchWord) => {
+  const getSearchInput = (searchWord) => {
     setTerm(searchWord);
   };
 
@@ -17,7 +17,9 @@ function App() {
   const axios = require('axios');
   // Make a get request to search photos
   axios
-    .get(`https://api.unsplash.com/search/photos?client_id=${process.env.ACCESS_KEY}&query=${term}`)
+    .get(
+      `https://api.unsplash.com/search/photos?client_id=${process.env.ACCESS_KEY}&query=${term}`
+    )
     .then(function (response) {
       // handle success
       console.log(response);
@@ -33,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <div className="app_header">
-        <Header getSearchTerm={getSearchTerm} />
+        <Header getSearchInput={getSearchInput} />
       </div>
       <div className="app_body">
         <MainBoard />
